@@ -1,33 +1,20 @@
-/* =========================================================
+ /* =========================================================
    L U K I — PRODIGE TCH
-   CSS V1 — INTERFACE PREMIUM DYNAMIQUE
+   STYLE GLOBAL COMPLET
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET
    ========================================================= */
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
     -webkit-tap-highlight-color: transparent;
 }
-
-:root {
-    --bg: #242424;
-    --bg-dark: #181818;
-    --black: #090909;
-    --orange: #ff8a00;
-    --orange-light: #ffab4a;
-    --white: #ffffff;
-    --soft: #c9c9c9;
-    --muted: #8e8e8e;
-
-    --glass: rgba(65, 65, 65, 0.42);
-    --glass-dark: rgba(15, 15, 15, 0.72);
-    --border: rgba(255, 255, 255, 0.10);
-}
-
-/* =========================================================
-   BASE
-   ========================================================= */
 
 html {
     scroll-behavior: smooth;
@@ -35,6 +22,7 @@ html {
 
 body {
     min-height: 100vh;
+
     overflow-x: hidden;
 
     font-family:
@@ -46,19 +34,20 @@ body {
         Arial,
         sans-serif;
 
-    color: var(--white);
+    color: #ffffff;
 
     background:
         radial-gradient(
             circle at 50% 0%,
-            rgba(255, 138, 0, 0.055),
+            rgba(255, 138, 0, 0.07),
             transparent 35%
         ),
-        var(--bg);
+        #242424;
 }
 
 button,
-input {
+input,
+textarea {
     font: inherit;
 }
 
@@ -68,33 +57,85 @@ button {
     cursor: pointer;
 }
 
+img {
+    max-width: 100%;
+}
+
 .hidden {
     display: none !important;
 }
 
+
 /* =========================================================
-   BOUTONS
+   2. VARIABLES L U K I
+   ========================================================= */
+
+:root {
+
+    --bg: #242424;
+
+    --bg-dark: #181818;
+
+    --black: #080808;
+
+    --black-soft: #101010;
+
+    --orange: #ff8a00;
+
+    --orange-light: #ffab4a;
+
+    --white: #ffffff;
+
+    --soft: #c9c9c9;
+
+    --muted: #8d8d8d;
+
+    --glass:
+        rgba(75, 75, 75, 0.34);
+
+    --glass-dark:
+        rgba(10, 10, 10, 0.76);
+
+    --glass-border:
+        rgba(255,255,255,0.11);
+
+    --shadow:
+        0 25px 65px rgba(0,0,0,0.45);
+}
+
+
+/* =========================================================
+   3. BOUTONS
    ========================================================= */
 
 .primary-btn {
+
     min-width: 190px;
+
     min-height: 52px;
 
     padding: 14px 28px;
 
     border-radius: 14px;
 
-    color: #fff;
+    color: white;
 
-    background: #090909;
+    background:
+        linear-gradient(
+            145deg,
+            #111111,
+            #070707
+        );
 
-    border-top: 3px solid var(--orange);
+    border-top:
+        3px solid var(--orange);
 
-    font-weight: 750;
-    letter-spacing: .5px;
+    font-weight: 800;
+
+    letter-spacing: .7px;
 
     box-shadow:
-        0 12px 35px rgba(0, 0, 0, .40),
+        0 15px 40px rgba(0,0,0,.45),
         inset 0 1px 0 rgba(255,255,255,.05);
 
     transition:
@@ -104,86 +145,132 @@ button {
 }
 
 .primary-btn:hover {
-    background: #131313;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171717,
+            #090909
+        );
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,.45),
-        0 0 18px rgba(255,138,0,.12);
+        0 18px 45px rgba(0,0,0,.55),
+        0 0 22px rgba(255,138,0,.14);
 }
 
 .primary-btn:active {
-    transform: scale(.96);
+
+    transform: scale(.95);
 }
 
+
 .secondary-btn {
+
     width: 100%;
+
     min-height: 50px;
 
     padding: 13px 16px;
 
     border-radius: 13px;
 
-    color: #fff;
+    color: white;
 
-    background: #101010;
+    background:
+        rgba(10,10,10,.85);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border:
+        1px solid rgba(255,255,255,.08);
 
     transition: .2s ease;
 }
 
 .secondary-btn:active {
+
     transform: scale(.97);
 }
 
+
 /* =========================================================
-   ÉCRAN D'OUVERTURE
-   ========================================================= */
+   4. OUVERTURE
+========================================================= */
 
 #openingScreen {
+
     position: relative;
 
     min-height: 100vh;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: space-between;
 
-    padding: 70px 20px 40px;
+    padding:
+        70px
+        20px
+        40px;
 
     overflow: hidden;
 
     background:
+
         radial-gradient(
             circle at center,
-            rgba(255,138,0,.065),
-            transparent 45%
+            rgba(255,138,0,.07),
+            transparent 46%
         ),
+
         #242424;
 }
 
+
+/* =========================================================
+   OISEAU / WATERMARK
+========================================================= */
+
 .bird-watermark {
+
     position: absolute;
 
     left: 50%;
+
     top: 50%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     font-size: 190px;
 
-    opacity: .06;
+    opacity: .055;
 
     pointer-events: none;
+
     user-select: none;
 
     z-index: 0;
+
+    filter:
+        grayscale(1)
+        brightness(.7);
+
+    animation:
+        birdFloat 8s ease-in-out infinite;
 }
 
+
+/* =========================================================
+   BRAND
+========================================================= */
+
 .brand-block {
+
     position: relative;
-    z-index: 2;
+
+    z-index: 5;
 
     text-align: center;
 
@@ -191,24 +278,30 @@ button {
 }
 
 .brand-title {
-    font-size: clamp(34px, 10vw, 58px);
 
-    font-weight: 800;
+    font-size:
+        clamp(34px, 10vw, 58px);
+
+    font-weight: 850;
 
     letter-spacing: 10px;
 
     margin-left: 10px;
 
     text-shadow:
-        0 6px 25px rgba(0,0,0,.40);
+        0 8px 30px rgba(0,0,0,.5);
 }
 
 .brand-subtitle {
+
     margin-top: 12px;
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    font-size: 18px;
+    font-size: 19px;
 
     font-style: italic;
 
@@ -218,40 +311,50 @@ button {
 }
 
 .opening-action {
+
     position: relative;
-    z-index: 3;
+
+    z-index: 5;
 
     margin-bottom: 35px;
 }
 
+
 /* =========================================================
-   POLITIQUE
-   ========================================================= */
+   5. POLITIQUE
+========================================================= */
 
 #policyScreen {
+
     min-height: 100vh;
 
     padding: 25px 18px;
 
-    background: var(--bg);
+    background: #242424;
 }
 
 .policy-container {
+
     width: 100%;
+
     max-width: 700px;
 
     margin: auto;
 }
 
 .policy-title {
+
     text-align: center;
 
     font-size: 25px;
 
     margin-bottom: 20px;
+
+    font-weight: 800;
 }
 
 .policy-box {
+
     max-height: 60vh;
 
     overflow-y: auto;
@@ -260,25 +363,34 @@ button {
 
     border-radius: 20px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--glass-border);
 
-    border-top: 3px solid var(--orange);
+    border-top:
+        3px solid var(--orange);
 
-    background: rgba(30,30,30,.78);
+    background:
+        rgba(30,30,30,.80);
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
 
     box-shadow:
-        0 18px 45px rgba(0,0,0,.30);
+        0 20px 50px rgba(0,0,0,.35);
 }
 
 .policy-box h3 {
-    margin: 18px 0 8px;
+
+    margin:
+        18px 0 8px;
 }
 
 .policy-box p,
 .policy-box li {
+
     color: var(--soft);
 
     font-size: 14px;
@@ -287,10 +399,12 @@ button {
 }
 
 .policy-box ul {
+
     padding-left: 20px;
 }
 
 .policy-check {
+
     display: flex;
 
     gap: 10px;
@@ -307,12 +421,15 @@ button {
 }
 
 .policy-check input {
+
     margin-top: 4px;
 
-    accent-color: var(--orange);
+    accent-color:
+        var(--orange);
 }
 
 .policy-actions {
+
     display: flex;
 
     flex-direction: column;
@@ -320,31 +437,59 @@ button {
     gap: 12px;
 }
 
-/* =========================================================
-   ÉCRAN D'ACCÈS
-   ========================================================= */
 
-#accessScreen {
+/* =========================================================
+   6. REFUS
+========================================================= */
+
+#refusalScreen {
+
     min-height: 100vh;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 25px;
 
-    background: var(--bg);
+    background: #242424;
+}
+
+
+/* =========================================================
+   7. ACCESS
+========================================================= */
+
+#accessScreen {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background: #242424;
 }
 
 .access-container {
+
+    position: relative;
+
     width: 100%;
+
     max-width: 420px;
 
     text-align: center;
 }
 
 .access-container h1 {
+
     font-size: 30px;
 
     letter-spacing: 5px;
@@ -353,6 +498,7 @@ button {
 }
 
 .access-container p {
+
     color: var(--soft);
 
     line-height: 1.5;
@@ -361,6 +507,7 @@ button {
 }
 
 .access-actions {
+
     display: flex;
 
     flex-direction: column;
@@ -368,27 +515,33 @@ button {
     gap: 13px;
 }
 
+
 /* =========================================================
-   APPLICATION
-   ========================================================= */
+   8. APPLICATION
+========================================================= */
 
 #mainApp {
+
     min-height: 100vh;
 
     background:
+
         radial-gradient(
             circle at 50% 0%,
             rgba(255,138,0,.045),
             transparent 30%
         ),
-        var(--bg);
+
+        #242424;
 }
 
+
 /* =========================================================
-   BARRE SUPÉRIEURE
-   ========================================================= */
+   9. TOP BAR
+========================================================= */
 
 .topbar {
+
     position: sticky;
 
     top: 0;
@@ -399,33 +552,44 @@ button {
 
     display: grid;
 
-    grid-template-columns: 55px 1fr 75px;
+    grid-template-columns:
+        55px
+        1fr
+        75px;
 
     align-items: center;
 
     padding: 0 10px;
 
-    background: rgba(20,20,20,.84);
+    background:
+        rgba(20,20,20,.88);
 
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter:
+        blur(24px);
 
-    border-bottom: 1px solid rgba(255,255,255,.06);
+    -webkit-backdrop-filter:
+        blur(24px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
 
     box-shadow:
-        0 8px 30px rgba(0,0,0,.28);
+        0 8px 30px rgba(0,0,0,.3);
 }
 
 .menu-button {
+
     width: 45px;
+
     height: 45px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    color: #fff;
+    color: white;
 
     background: transparent;
 
@@ -435,15 +599,18 @@ button {
 }
 
 .menu-button:active {
-    background: rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.08);
 }
 
 .topbar-brand {
+
     text-align: center;
 
     font-size: 20px;
 
-    font-weight: 800;
+    font-weight: 850;
 
     letter-spacing: 5px;
 
@@ -451,62 +618,78 @@ button {
 }
 
 .login-button {
+
     justify-self: end;
 
     padding: 9px 12px;
 
     border-radius: 10px;
 
-    color: #fff;
+    color: white;
 
     background: #090909;
 
-    border-top: 2px solid var(--orange);
+    border-top:
+        2px solid var(--orange);
 
     font-size: 11px;
 
     font-weight: 800;
 }
 
+
 /* =========================================================
-   MENU LATÉRAL
-   ========================================================= */
+   10. MENU LATÉRAL
+========================================================= */
 
 .side-menu {
+
     position: fixed;
 
     top: 0;
+
     left: 0;
 
     z-index: 300;
 
-    width: min(310px, 84vw);
+    width:
+        min(310px,84vw);
 
     height: 100vh;
 
     padding: 30px 18px;
 
-    background: rgba(15,15,15,.97);
+    background:
+        rgba(12,12,12,.97);
 
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter:
+        blur(25px);
 
-    border-right: 1px solid rgba(255,255,255,.08);
+    -webkit-backdrop-filter:
+        blur(25px);
 
-    transform: translateX(-105%);
+    border-right:
+        1px solid rgba(255,255,255,.08);
+
+    transform:
+        translateX(-105%);
 
     transition:
-        transform .35s cubic-bezier(.22,1,.36,1);
+        transform .35s
+        cubic-bezier(.22,1,.36,1);
 
     box-shadow:
-        20px 0 50px rgba(0,0,0,.40);
+        20px 0 50px rgba(0,0,0,.45);
 }
 
 .side-menu.open {
-    transform: translateX(0);
+
+    transform:
+        translateX(0);
 }
 
 .menu-title {
+
     text-align: center;
 
     font-size: 22px;
@@ -517,10 +700,12 @@ button {
 
     padding-bottom: 18px;
 
-    border-bottom: 1px solid rgba(255,255,255,.08);
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
 }
 
 .menu-item {
+
     width: 100%;
 
     display: flex;
@@ -537,7 +722,7 @@ button {
 
     background: transparent;
 
-    color: #fff;
+    color: white;
 
     text-align: left;
 
@@ -546,80 +731,101 @@ button {
 
 .menu-item:hover,
 .menu-item:active {
-    background: rgba(255,138,0,.08);
 
-    border-left: 3px solid var(--orange);
+    background:
+        rgba(255,138,0,.08);
+
+    border-left:
+        3px solid var(--orange);
 }
 
+
 /* =========================================================
-   ACCUEIL
-   ========================================================= */
+   11. ACCUEIL
+========================================================= */
 
 .home-content {
+
     width: 100%;
 
     max-width: 1000px;
 
     margin: auto;
 
-    padding: 25px 12px 60px;
+    padding:
+        25px
+        13px
+        70px;
 }
 
+
 /* =========================================================
-   HERO
-   ========================================================= */
+   12. HERO
+========================================================= */
 
 .home-hero {
+
     position: relative;
 
-    min-height: 240px;
+    min-height: 245px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
     overflow: hidden;
 
-    margin-bottom: 38px;
+    margin-bottom: 48px;
 
-    border-radius: 28px;
+    border-radius: 30px;
 
     background:
+
         radial-gradient(
             circle at center,
-            rgba(255,138,0,.08),
+            rgba(255,138,0,.10),
             transparent 55%
         ),
+
         rgba(65,65,65,.28);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border:
+        1px solid rgba(255,255,255,.08);
 
     box-shadow:
-        0 20px 55px rgba(0,0,0,.30);
+        0 25px 60px rgba(0,0,0,.35);
 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
 }
 
 .home-hero-content {
+
     position: relative;
 
     z-index: 5;
 }
 
 .home-hero h1 {
-    font-size: clamp(25px, 7vw, 38px);
+
+    font-size:
+        clamp(27px,7vw,40px);
 
     line-height: 1.15;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .home-hero p {
-    max-width: 300px;
+
+    max-width: 310px;
 
     margin: auto;
 
@@ -627,75 +833,165 @@ button {
 
     font-size: 14px;
 
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
-/* =========================================================
-   PANNEAUX PRINCIPAUX
-   ========================================================= */
 
-.dynamic-frame {
+/* =========================================================
+   13. UNIVERS
+========================================================= */
+
+.universe-section {
+
     position: relative;
 
-    width: 96%;
+    width: 100%;
 
-    min-height: 285px;
+    margin-bottom: 65px;
 
-    margin-bottom: 34px;
+    overflow: visible;
+}
+
+.universe-heading {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin:
+        0 8px
+        22px;
+}
+
+.universe-heading h2 {
+
+    display: inline-block;
+
+    margin-left: 8px;
+
+    font-size: 24px;
+
+    font-weight: 850;
+
+    letter-spacing: 1px;
+}
+
+.universe-heading p {
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.universe-icon {
+
+    font-size: 22px;
+}
+
+.universe-more {
+
+    flex-shrink: 0;
+
+    color:
+        var(--orange-light);
+
+    background: transparent;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: .4px;
+}
+
+
+/* =========================================================
+   14. GRANDS PANNEAUX
+========================================================= */
+
+.feature-panel {
+
+    position: relative;
+
+    width: 94%;
+
+    min-height: 220px;
+
+    margin-bottom: 25px;
 
     overflow: hidden;
 
-    border-radius: 27px;
+    border-radius: 25px;
 
-    border: 1px solid rgba(255,255,255,.11);
+    border:
+        1px solid rgba(255,255,255,.13);
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(90,90,90,.38),
-            rgba(18,18,18,.72)
-        );
+        rgba(35,35,35,.55);
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
 
     box-shadow:
-        0 25px 65px rgba(0,0,0,.38),
-        inset 0 1px 0 rgba(255,255,255,.07);
+        0 25px 60px rgba(0,0,0,.42),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.08);
 
     transition:
-        transform .4s cubic-bezier(.22,1,.36,1),
-        box-shadow .4s ease;
+        transform .35s
+        cubic-bezier(.22,1,.36,1),
 
-    animation:
-        panelFloat 7s ease-in-out infinite;
+        box-shadow .35s ease;
 }
 
-/* Décalage alterné */
 
-.dynamic-frame:nth-of-type(odd) {
-    margin-right: auto;
+/* =========================================================
+   DÉCALAGE DES PANNEAUX
+========================================================= */
 
-    transform: translateX(-2%);
+.panel-left {
+
+    margin-left: 0;
+
+    transform:
+        translateX(-2%);
 }
 
-.dynamic-frame:nth-of-type(even) {
+.panel-right {
+
     margin-left: auto;
 
-    transform: translateX(2%);
+    transform:
+        translateX(2%);
 }
 
-/* Ligne orange supérieure */
 
-.dynamic-frame::before {
+/* =========================================================
+   ORANGE TOP LINE
+========================================================= */
+
+.feature-panel::before {
+
     content: "";
 
     position: absolute;
 
-    z-index: 10;
-
     top: 0;
+
     left: 0;
+
+    z-index: 20;
 
     width: 100%;
 
@@ -705,497 +1001,397 @@ button {
         linear-gradient(
             90deg,
             var(--orange),
-            rgba(255,138,0,.30),
+            rgba(255,138,0,.55),
             transparent
         );
 
     box-shadow:
-        0 0 18px rgba(255,138,0,.40);
+        0 0 18px
+        rgba(255,138,0,.45);
 }
 
-/* Reflet lumineux */
 
-.dynamic-frame::after {
+/* =========================================================
+   REFLET
+========================================================= */
+
+.feature-panel::after {
+
     content: "";
 
     position: absolute;
 
-    z-index: 8;
-
     top: -80%;
-    left: -35%;
 
-    width: 55%;
-    height: 220%;
+    left: -45%;
+
+    z-index: 12;
+
+    width: 45%;
+
+    height: 230%;
 
     background:
         linear-gradient(
             110deg,
             transparent,
-            rgba(255,255,255,.075),
+            rgba(255,255,255,.12),
             transparent
         );
 
-    transform: rotate(12deg);
+    transform:
+        rotate(12deg);
 
     pointer-events: none;
 
     animation:
-        glassReflection 9s ease-in-out infinite;
+        glassReflection 9s
+        ease-in-out
+        infinite;
 }
+
 
 /* =========================================================
-   EN-TÊTE DES PANNEAUX
-   ========================================================= */
+   IMAGE DES PANNEAUX
+========================================================= */
 
-.frame-header {
-    position: relative;
+.feature-panel img {
 
-    z-index: 15;
+    position: absolute;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 19px 19px 13px;
-}
-
-.frame-title {
-    font-size: 19px;
-
-    font-weight: 800;
-
-    letter-spacing: .5px;
-
-    text-shadow:
-        0 4px 15px rgba(0,0,0,.55);
-}
-
-.frame-more {
-    color: var(--orange-light);
-
-    background: transparent;
-
-    font-size: 12px;
-
-    font-weight: 800;
-}
-
-/* =========================================================
-   CARTES À L'INTÉRIEUR
-   ========================================================= */
-
-.cards-row {
-    position: relative;
-
-    z-index: 12;
-
-    display: flex;
-
-    gap: 16px;
-
-    overflow-x: auto;
-
-    padding:
-        4px 19px 24px;
-
-    scrollbar-width: none;
-
-    scroll-snap-type: x mandatory;
-
-    -webkit-overflow-scrolling: touch;
-}
-
-.cards-row::-webkit-scrollbar {
-    display: none;
-}
-
-.content-card {
-    position: relative;
-
-    flex: 0 0 205px;
-
-    height: 205px;
-
-    overflow: hidden;
-
-    scroll-snap-align: start;
-
-    border-radius: 19px;
-
-    background: #090909;
-
-    border: 1px solid rgba(255,255,255,.09);
-
-    box-shadow:
-        0 13px 32px rgba(0,0,0,.45);
-
-    transition:
-        transform .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
-}
-
-.content-card:hover {
-    border-color: rgba(255,138,0,.50);
-
-    box-shadow:
-        0 17px 38px rgba(0,0,0,.50),
-        0 0 18px rgba(255,138,0,.08);
-}
-
-.content-card:active {
-    transform: scale(.965);
-}
-
-/* =========================================================
-   IMAGES / POCHETTES
-   ========================================================= */
-
-.card-image {
-    position: relative;
+    inset: 0;
 
     width: 100%;
 
-    height: 135px;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    opacity: .72;
+
+    transform:
+        scale(1.03);
+
+    transition:
+        transform .7s ease,
+        opacity .5s ease;
+}
+
+
+/* =========================================================
+   OVERLAY IMAGE
+========================================================= */
+
+.panel-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.86),
+            rgba(0,0,0,.56) 48%,
+            rgba(0,0,0,.20)
+        ),
+
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.65),
+            transparent 60%
+        );
+}
+
+
+/* =========================================================
+   CONTENU PANNEAU
+========================================================= */
+
+.panel-content {
+
+    position: absolute;
+
+    left: 22px;
+
+    right: 65px;
+
+    bottom: 25px;
+
+    z-index: 15;
+}
+
+.panel-label {
+
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    color:
+        var(--orange-light);
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: 1px;
+}
+
+.panel-content h3 {
+
+    margin-bottom: 7px;
+
+    color: white;
+
+    font-size:
+        clamp(20px,6vw,30px);
+
+    line-height: 1.1;
+
+    font-weight: 850;
+
+    text-shadow:
+        0 5px 20px rgba(0,0,0,.65);
+}
+
+.panel-content p {
+
+    max-width: 300px;
+
+    color:
+        rgba(255,255,255,.78);
+
+    font-size: 12px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   FLÈCHE
+========================================================= */
+
+.panel-arrow {
+
+    position: absolute;
+
+    right: 20px;
+
+    bottom: 23px;
+
+    z-index: 18;
+
+    width: 43px;
+
+    height: 43px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    overflow: hidden;
+    border-radius: 50%;
 
-    background-size: cover;
-
-    background-position: center;
-
-    background-repeat: no-repeat;
-
-    color: rgba(255,255,255,.20);
-
-    font-size: 45px;
-
-    transition:
-        transform .7s ease,
-        filter .5s ease;
-}
-
-/* Voile sombre */
-
-.card-image::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
+    color: white;
 
     background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.04),
-            rgba(0,0,0,.60)
-        );
+        rgba(8,8,8,.72);
 
-    pointer-events: none;
-}
-
-/* Reflet couleur */
-
-.card-image::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 2;
-
-    background:
-        linear-gradient(
-            120deg,
-            rgba(255,138,0,.10),
-            transparent 45%,
-            rgba(0,0,0,.20)
-        );
-
-    pointer-events: none;
-}
-
-.content-card:hover .card-image {
-    transform: scale(1.06);
-
-    filter: brightness(1.08);
-}
-
-/* =========================================================
-   IMAGES FILMS
-   ========================================================= */
-
-.dynamic-frame:nth-of-type(1)
-.content-card:nth-child(1)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(1)
-.content-card:nth-child(2)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(1)
-.content-card:nth-child(3)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(1)
-.content-card:nth-child(4)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(1)
-.content-card:nth-child(5)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=900&q=85");
-}
-
-/* =========================================================
-   IMAGES MUSIQUE
-   ========================================================= */
-
-.dynamic-frame:nth-of-type(2)
-.content-card:nth-child(1)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(2)
-.content-card:nth-child(2)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(2)
-.content-card:nth-child(3)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(2)
-.content-card:nth-child(4)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(2)
-.content-card:nth-child(5)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=85");
-}
-
-/* =========================================================
-   IMAGES DIVERTISSEMENT
-   ========================================================= */
-
-.dynamic-frame:nth-of-type(3)
-.content-card:nth-child(1)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(3)
-.content-card:nth-child(2)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(3)
-.content-card:nth-child(3)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(3)
-.content-card:nth-child(4)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(3)
-.content-card:nth-child(5)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=85");
-}
-
-/* =========================================================
-   IMAGES JEUX
-   ========================================================= */
-
-.dynamic-frame:nth-of-type(4)
-.content-card:nth-child(1)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(4)
-.content-card:nth-child(2)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(4)
-.content-card:nth-child(3)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(4)
-.content-card:nth-child(4)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=900&q=85");
-}
-
-.dynamic-frame:nth-of-type(4)
-.content-card:nth-child(5)
-.card-image {
-    background-image:
-        url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=85");
-}
-
-/* =========================================================
-   TEXTE DES CARTES
-   ========================================================= */
-
-.card-info {
-    position: relative;
-
-    z-index: 5;
-
-    padding: 10px 11px;
-}
-
-.card-title {
-    color: #fff;
-
-    font-size: 13px;
-
-    font-weight: 750;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-}
-
-.card-subtitle {
-    margin-top: 4px;
-
-    color: var(--muted);
-
-    font-size: 11px;
-}
-
-.card-accent {
-    position: absolute;
-
-    z-index: 6;
-
-    left: 0;
-    bottom: 0;
-
-    width: 48%;
-
-    height: 3px;
-
-    background: var(--orange);
+    border:
+        1px solid rgba(255,255,255,.13);
 
     box-shadow:
-        0 0 12px rgba(255,138,0,.45);
+        0 10px 25px rgba(0,0,0,.4);
+
+    font-size: 21px;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
 }
 
+
 /* =========================================================
-   PAGE DYNAMIQUE
-   ========================================================= */
+   TOUCH / HOVER PANNEAUX
+========================================================= */
+
+.feature-panel:hover {
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.55),
+        0 0 25px rgba(255,138,0,.08);
+}
+
+.feature-panel:hover img {
+
+    transform:
+        scale(1.09);
+
+    opacity: .85;
+}
+
+.feature-panel:hover .panel-arrow {
+
+    transform:
+        translateX(5px);
+
+    background:
+        rgba(255,138,0,.18);
+}
+
+.feature-panel:active {
+
+    transform:
+        scale(.975);
+}
+
+
+/* =========================================================
+   15. DIFFÉRENCIATION DES UNIVERS
+========================================================= */
+
+.films-section
+.feature-panel {
+
+    min-height: 230px;
+}
+
+.music-section
+.feature-panel {
+
+    min-height: 230px;
+}
+
+.entertainment-section
+.feature-panel {
+
+    min-height: 220px;
+}
+
+.games-section
+.feature-panel {
+
+    min-height: 220px;
+}
+
+
+/* =========================================================
+   16. EFFET PROFONDEUR ENTRE LES PANNEAUX
+========================================================= */
+
+.feature-panel:nth-child(odd) {
+
+    box-shadow:
+        -12px 22px 55px rgba(0,0,0,.42),
+        inset 0 1px 0 rgba(255,255,255,.07);
+}
+
+.feature-panel:nth-child(even) {
+
+    box-shadow:
+        12px 22px 55px rgba(0,0,0,.42),
+        inset 0 1px 0 rgba(255,255,255,.07);
+}
+
+
+/* =========================================================
+   17. PAGE DYNAMIQUE
+========================================================= */
 
 #dynamicPage {
-    min-height: calc(100vh - 64px);
 
-    padding: 25px 15px 55px;
+    min-height:
+        calc(100vh - 64px);
+
+    padding:
+        25px
+        15px
+        60px;
 }
 
 .dynamic-page-container {
+
     max-width: 900px;
 
     margin: auto;
 }
 
 .dynamic-page-title {
-    font-size: 28px;
 
     margin-bottom: 10px;
+
+    font-size: 30px;
+
+    font-weight: 850;
 }
 
 .dynamic-page-description {
+
     color: var(--soft);
 
-    line-height: 1.5;
+    line-height: 1.55;
 
     margin-bottom: 25px;
 }
 
+
 /* =========================================================
-   AUTHENTIFICATION
-   ========================================================= */
+   18. AUTHENTIFICATION
+========================================================= */
+
+#authPage {
+
+    min-height: 100vh;
+
+    padding:
+        25px 18px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,138,0,.055),
+            transparent 50%
+        ),
+
+        #242424;
+}
 
 .auth-container {
+
     width: 100%;
 
     max-width: 420px;
 
     margin: auto;
 
-    padding: 30px 18px;
+    padding:
+        25px 0;
 }
 
 .auth-title {
+
     text-align: center;
 
-    font-size: 28px;
+    font-size: 29px;
 
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 
-    margin-bottom: 25px;
+    margin:
+        30px 0 25px;
 }
 
 .auth-tabs {
+
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 8px;
 
@@ -1203,53 +1399,85 @@ button {
 }
 
 .auth-tab {
+
     padding: 13px;
 
     border-radius: 10px;
 
     background: #111;
 
-    color: #999;
+    color: #888;
+
+    transition: .2s ease;
 }
 
 .auth-tab.active {
-    color: #fff;
 
-    border-top: 2px solid var(--orange);
+    color: white;
+
+    border-top:
+        2px solid var(--orange);
+
+    background:
+        #151515;
 }
 
 .auth-method {
+
     width: 100%;
 
-    min-height: 48px;
+    min-height: 50px;
 
     margin-bottom: 10px;
 
-    padding: 0 15px;
+    padding:
+        0 15px;
 
-    border-radius: 11px;
+    border-radius: 12px;
 
-    background: #101010;
+    background:
+        rgba(12,12,12,.88);
 
-    color: #fff;
+    color: white;
 
-    border: 1px solid rgba(255,255,255,.07);
+    border:
+        1px solid rgba(255,255,255,.07);
 
     text-align: left;
+
+    transition: .2s ease;
+}
+
+.auth-method:hover {
+
+    border-color:
+        rgba(255,138,0,.25);
+}
+
+.auth-method:active {
+
+    transform:
+        scale(.98);
 }
 
 .auth-submit {
+
     width: 100%;
 
     margin-top: 10px;
 }
 
+
 /* =========================================================
-   FOOTER
-   ========================================================= */
+   19. FOOTER
+========================================================= */
 
 .app-footer {
-    padding: 25px 15px 35px;
+
+    padding:
+        30px
+        15px
+        40px;
 
     text-align: center;
 
@@ -1257,133 +1485,318 @@ button {
 
     font-size: 11px;
 
-    line-height: 1.6;
+    line-height: 1.7;
 }
+
+.app-footer strong {
+
+    color:
+        #bcbcbc;
+
+    letter-spacing:
+        4px;
+}
+
 
 /* =========================================================
-   ANIMATIONS
-   ========================================================= */
-
-@keyframes panelFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-6px);
-    }
-}
+   20. ANIMATIONS
+========================================================= */
 
 @keyframes glassReflection {
 
     0% {
+
         transform:
-            translateX(-100%)
+            translateX(-120%)
             rotate(12deg);
     }
 
     45% {
+
         transform:
-            translateX(250%)
+            translateX(300%)
             rotate(12deg);
     }
 
     100% {
+
         transform:
-            translateX(250%)
+            translateX(300%)
             rotate(12deg);
     }
 }
 
-/* =========================================================
-   TABLETTES / ÉCRANS PLUS GRANDS
-   ========================================================= */
 
-@media (min-width: 600px) {
+@keyframes birdFloat {
 
-    .home-content {
-        padding-left: 25px;
-        padding-right: 25px;
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
     }
 
-    .dynamic-frame {
-        width: 94%;
+    50% {
 
-        min-height: 320px;
-    }
-
-    .content-card {
-        flex-basis: 235px;
-
-        height: 225px;
-    }
-
-    .card-image {
-        height: 150px;
+        transform:
+            translate(-50%, -53%)
+            scale(1.04);
     }
 }
 
+
 /* =========================================================
-   PETITS IPHONE
-   ========================================================= */
+   21. APPARITION DES PANNEAUX
+========================================================= */
+
+.feature-panel {
+
+    animation:
+        panelAppear .7s
+        cubic-bezier(.22,1,.36,1)
+        both;
+}
+
+.feature-panel:nth-child(2) {
+    animation-delay: .05s;
+}
+
+.feature-panel:nth-child(3) {
+    animation-delay: .10s;
+}
+
+.feature-panel:nth-child(4) {
+    animation-delay: .15s;
+}
+
+.feature-panel:nth-child(5) {
+    animation-delay: .20s;
+}
+
+.feature-panel:nth-child(6) {
+    animation-delay: .25s;
+}
+
+
+@keyframes panelAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.97);
+    }
+
+    to {
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   22. PETITS ÉCRANS
+========================================================= */
 
 @media (max-width: 360px) {
 
     .topbar {
-        grid-template-columns: 50px 1fr 68px;
+
+        grid-template-columns:
+            50px
+            1fr
+            68px;
     }
 
     .topbar-brand {
+
         font-size: 17px;
 
         letter-spacing: 4px;
     }
 
     .login-button {
-        padding: 8px 9px;
+
+        padding:
+            8px 9px;
 
         font-size: 10px;
     }
 
-    .dynamic-frame {
-        width: 97%;
+    .home-content {
 
-        min-height: 265px;
+        padding-left: 10px;
+
+        padding-right: 10px;
     }
 
-    .content-card {
-        flex-basis: 185px;
+    .feature-panel {
 
-        height: 190px;
+        width: 96%;
+
+        min-height: 205px;
+
+        border-radius: 22px;
     }
 
-    .card-image {
-        height: 125px;
+    .panel-content {
+
+        left: 17px;
+
+        bottom: 20px;
+
+        right: 58px;
+    }
+
+    .panel-content h3 {
+
+        font-size: 19px;
+    }
+
+    .panel-content p {
+
+        font-size: 11px;
+    }
+
+    .panel-arrow {
+
+        right: 14px;
+
+        bottom: 18px;
+
+        width: 38px;
+
+        height: 38px;
     }
 
     .brand-title {
+
         font-size: 31px;
 
         letter-spacing: 8px;
     }
+
+    .universe-heading h2 {
+
+        font-size: 21px;
+    }
 }
 
-/* =========================================================
-   SAFARI / IPHONE SAFE AREA
-   ========================================================= */
 
-@supports (padding: max(0px)) {
+/* =========================================================
+   23. TABLETTES / ÉCRANS PLUS LARGES
+========================================================= */
+
+@media (min-width: 600px) {
 
     .home-content {
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+    }
+
+    .feature-panel {
+
+        min-height: 280px;
+
+        width: 92%;
+
+        border-radius: 30px;
+    }
+
+    .panel-content {
+
+        left: 30px;
+
+        bottom: 30px;
+    }
+
+    .panel-content h3 {
+
+        font-size: 32px;
+    }
+
+    .panel-content p {
+
+        font-size: 14px;
+    }
+
+    .panel-arrow {
+
+        width: 50px;
+
+        height: 50px;
+
+        right: 25px;
+
+        bottom: 25px;
+    }
+}
+
+
+/* =========================================================
+   24. IPHONE SAFE AREA
+========================================================= */
+
+@supports (
+    padding: max(0px)
+) {
+
+    .home-content {
+
         padding-bottom:
-            max(60px, env(safe-area-inset-bottom));
+            max(
+                70px,
+                env(safe-area-inset-bottom)
+            );
     }
 
     .app-footer {
+
         padding-bottom:
-            max(35px, env(safe-area-inset-bottom));
+            max(
+                40px,
+                env(safe-area-inset-bottom)
+            );
+    }
+
+    .side-menu {
+
+        padding-top:
+            max(
+                30px,
+                env(safe-area-inset-top)
+            );
     }
 }
-   
+
+
+/* =========================================================
+   25. RÉDUCTION DES ANIMATIONS
+========================================================= */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+    }
+}
