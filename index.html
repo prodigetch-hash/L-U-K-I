@@ -1,1 +1,1414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#242424">
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="L U K I"
+    >
+
+    <title>L U K I — Prodige TCH</title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ÉCRAN D'OUVERTURE
+    ====================================================== -->
+
+    <section id="openingScreen" class="screen opening-screen">
+
+        <div class="logo-watermark" aria-hidden="true">
+            🪽
+        </div>
+
+        <div class="opening-content">
+
+            <div class="brand-name">
+                L U K I
+            </div>
+
+            <div class="brand-author">
+                Prodige TCH
+            </div>
+
+            <p class="brand-description">
+                Films · Musique · Divertissement · Jeux
+            </p>
+
+            <button
+                class="primary-button"
+                onclick="showPolicy()"
+            >
+                ACCÉDER
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         POLITIQUE / CONDITIONS
+    ====================================================== -->
+
+    <section id="policyScreen" class="screen hidden">
+
+        <div class="policy-container">
+
+            <div class="policy-header">
+                <span class="policy-icon">🛡️</span>
+
+                <h1>
+                    Bienvenue sur L U K I
+                </h1>
+
+                <p>
+                    Informations importantes avant d'accéder
+                    à l'application.
+                </p>
+            </div>
+
+
+            <div class="policy-content">
+
+                <h2>Propriété intellectuelle</h2>
+
+                <p>
+                    L U K I et les éléments qui composent
+                    l'application constituent un projet
+                    développé sous l'identité de
+                    <strong>Prodige TCH</strong>.
+                </p>
+
+                <p>
+                    Les éléments originaux de l'application,
+                    notamment son identité visuelle, son
+                    interface, ses contenus propres et ses
+                    fonctionnalités, sont susceptibles d'être
+                    protégés par les règles applicables en
+                    matière de propriété intellectuelle.
+                </p>
+
+                <p>
+                    Toute tentative de contrefaçon,
+                    reproduction ou exploitation illicite
+                    pourra faire l'objet des mesures et recours
+                    prévus par les textes applicables.
+                </p>
+
+
+                <h2>Références juridiques</h2>
+
+                <p>
+                    Le projet tient notamment compte, selon les
+                    situations concernées, des règles relatives
+                    au droit d'auteur, à la propriété
+                    intellectuelle, aux données personnelles et
+                    aux services numériques.
+                </p>
+
+                <ul>
+                    <li>Accord de Bangui et cadre OAPI</li>
+                    <li>Convention de Berne</li>
+                    <li>WIPO Copyright Treaty (WCT)</li>
+                    <li>
+                        Convention de Malabo de l'Union africaine
+                    </li>
+                    <li>
+                        Réglementation camerounaise applicable
+                        à la cybersécurité et à la
+                        cybercriminalité
+                    </li>
+                    <li>
+                        Règles relatives au commerce électronique,
+                        lorsqu'elles sont applicables
+                    </li>
+                    <li>
+                        RGPD / GDPR lorsqu'il est applicable
+                    </li>
+                </ul>
+
+
+                <h2>Contenus de tiers</h2>
+
+                <p>
+                    Certains contenus accessibles à travers
+                    L U K I peuvent appartenir à leurs auteurs,
+                    artistes, producteurs, éditeurs ou autres
+                    ayants droit.
+                </p>
+
+                <p>
+                    L U K I n'a pas vocation à permettre la
+                    diffusion, le téléchargement ou
+                    l'exploitation de contenus sans autorisation.
+                    Les contenus intégrés au service devront être
+                    utilisés conformément aux licences,
+                    autorisations et droits applicables.
+                </p>
+
+
+                <h2>Données personnelles</h2>
+
+                <p>
+                    Lorsque certaines fonctionnalités nécessitent
+                    la collecte de données personnelles, leur
+                    traitement devra être encadré par les règles
+                    applicables en matière de protection des
+                    données.
+                </p>
+
+
+                <h2>Votre choix</h2>
+
+                <p>
+                    Prenez connaissance de ces informations avant
+                    de poursuivre vers L U K I.
+                </p>
+
+            </div>
+
+
+            <div class="policy-actions">
+
+                <label class="policy-check">
+                    <input
+                        type="checkbox"
+                        id="policyAccepted"
+                    >
+
+                    <span>
+                        J'ai lu et compris ces informations.
+                    </span>
+                </label>
+
+
+                <button
+                    class="primary-button"
+                    onclick="acceptPolicy()"
+                >
+                    J'ACCEPTE
+                </button>
+
+
+                <button
+                    class="secondary-button"
+                    onclick="refusePolicy()"
+                >
+                    JE REFUSE
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         REFUS
+    ====================================================== -->
+
+    <section id="refusalScreen" class="screen hidden">
+
+        <div class="simple-card">
+
+            <div class="large-icon">
+                ⚠️
+            </div>
+
+            <h1>
+                Accès limité
+            </h1>
+
+            <p>
+                Vous avez choisi de ne pas accepter les
+                informations présentées.
+            </p>
+
+            <p>
+                Certaines fonctionnalités de L U K I ne peuvent
+                pas être proposées sans cette acceptation.
+            </p>
+
+            <button
+                class="primary-button"
+                onclick="backToPolicy()"
+            >
+                REVENIR À LA POLITIQUE
+            </button>
+
+            <button
+                class="secondary-button"
+                onclick="leaveLuki()"
+            >
+                QUITTER L U K I
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ÉCRAN D'ACCÈS
+    ====================================================== -->
+
+    <section id="accessScreen" class="screen hidden">
+
+        <div class="access-container">
+
+            <div class="access-logo">
+                L U K I
+            </div>
+
+            <div class="access-author">
+                Prodige TCH
+            </div>
+
+            <h1>
+                Prêt à entrer ?
+            </h1>
+
+            <p>
+                Découvre ton univers de divertissement.
+            </p>
+
+
+            <button
+                class="primary-button"
+                onclick="showHome()"
+            >
+                ACCÉDER À L U K I
+            </button>
+
+
+            <button
+                class="secondary-button"
+                onclick="showLogin()"
+            >
+                SE CONNECTER
+            </button>
+
+
+            <button
+                class="secondary-button"
+                onclick="showRegister()"
+            >
+                S'INSCRIRE
+            </button>
+
+
+            <button
+                class="text-button"
+                onclick="showHome()"
+            >
+                CONTINUER SANS COMPTE
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         APPLICATION PRINCIPALE
+    ====================================================== -->
+
+    <main id="mainApp" class="hidden">
+
+
+        <!-- BARRE SUPÉRIEURE -->
+
+        <header class="topbar">
+
+            <button
+                class="menu-button"
+                onclick="toggleMenu()"
+                aria-label="Ouvrir le menu"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-brand">
+                L U K I
+            </div>
+
+
+            <button
+                class="login-button"
+                onclick="showLogin()"
+            >
+                LOGIN
+            </button>
+
+        </header>
+
+
+        <!-- =================================================
+             MENU LATÉRAL
+        ================================================== -->
+
+        <aside id="sideMenu" class="side-menu">
+
+            <div class="menu-header">
+
+                <div class="menu-brand">
+                    L U K I
+                </div>
+
+                <button
+                    class="close-menu-button"
+                    onclick="closeMenu()"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <nav class="main-navigation">
+
+                <button
+                    class="nav-item active"
+                    onclick="showHome()"
+                >
+                    <span>🏠</span>
+                    <span>Accueil</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('films')"
+                >
+                    <span>🎬</span>
+                    <span>Films</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('music')"
+                >
+                    <span>🎵</span>
+                    <span>Musique</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('entertainment')"
+                >
+                    <span>🎉</span>
+                    <span>Divertissement</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('games')"
+                >
+                    <span>🎮</span>
+                    <span>Jeux</span>
+                </button>
+
+
+                <div class="menu-separator"></div>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('search')"
+                >
+                    <span>🔎</span>
+                    <span>Recherche</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('friends')"
+                >
+                    <span>👥</span>
+                    <span>Amis</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('downloads')"
+                >
+                    <span>⬇️</span>
+                    <span>Téléchargements</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('profile')"
+                >
+                    <span>👤</span>
+                    <span>Profil</span>
+                </button>
+
+            </nav>
+
+
+            <div class="menu-footer">
+                © 2026 TCH / Prodige TCH
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             ACCUEIL
+        ================================================== -->
+
+        <section id="homePage" class="page">
+
+
+            <!-- HERO -->
+
+            <div class="home-hero">
+
+                <div class="hero-watermark">
+                    🪽
+                </div>
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        BIENVENUE
+                    </span>
+
+                    <h1>
+                        Ton monde.
+                        <br>
+                        Tes envies.
+                        <br>
+                        <span>L U K I.</span>
+                    </h1>
+
+                    <p>
+                        Films, musique, divertissement et jeux
+                        réunis dans un seul univers.
+                    </p>
+
+                    <button
+                        class="primary-button"
+                        onclick="surpriseMe()"
+                    >
+                        ✨ SURPRENDS-MOI
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 FILMS
+            ============================================== -->
+
+            <section class="universe-section films-section">
+
+                <div class="universe-heading">
+
+                    <div>
+                        <span class="universe-icon">🎬</span>
+
+                        <div>
+                            <span class="section-kicker">
+                                UNIVERS
+                            </span>
+
+                            <h2>
+                                FILMS
+                            </h2>
+                        </div>
+                    </div>
+
+
+                    <button
+                        class="universe-more"
+                        onclick="showPage('films')"
+                    >
+                        VOIR TOUT →
+                    </button>
+
+                </div>
+
+
+                <div class="feature-list">
+
+                    <article
+                        class="feature-panel panel-left"
+                        onclick="openContent('film-moment')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80"
+                            alt="Cinéma"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                🔥 DU MOMENT
+                            </span>
+
+                            <h3>
+                                Vos films du moment
+                            </h3>
+
+                            <p>
+                                Les films à découvrir en ce moment
+                                dans l'univers L U K I.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="feature-panel panel-right"
+                        onclick="openContent('film-adventure')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80"
+                            alt="Aventure"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                🏔️ AVENTURE
+                            </span>
+
+                            <h3>
+                                L'appel de l'aventure
+                            </h3>
+
+                            <p>
+                                Des mondes à explorer et des
+                                histoires qui donnent envie de partir.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="feature-panel panel-left"
+                        onclick="openContent('film-action')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1200&q=80"
+                            alt="Action"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                💥 ACTION
+                            </span>
+
+                            <h3>
+                                Action à volonté
+                            </h3>
+
+                            <p>
+                                Adrénaline, combats, missions et
+                                aventures spectaculaires.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="feature-panel panel-right"
+                        onclick="openContent('film-romance')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80"
+                            alt="Romance"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                ❤️ ROMANCE
+                            </span>
+
+                            <h3>
+                                Histoires qui touchent
+                            </h3>
+
+                            <p>
+                                Romance, émotions et histoires
+                                inoubliables.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 MUSIQUE
+            ============================================== -->
+
+            <section class="universe-section music-section">
+
+                <div class="universe-heading">
+
+                    <div>
+                        <span class="universe-icon">🎵</span>
+
+                        <div>
+                            <span class="section-kicker">
+                                UNIVERS
+                            </span>
+
+                            <h2>
+                                MUSIQUE
+                            </h2>
+                        </div>
+                    </div>
+
+
+                    <button
+                        class="universe-more"
+                        onclick="showPage('music')"
+                    >
+                        VOIR TOUT →
+                    </button>
+
+                </div>
+
+
+                <div class="feature-list">
+
+                    <article
+                        class="feature-panel panel-right"
+                        onclick="openContent('music-global')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=80"
+                            alt="Musique"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                🌎 TOP MONDIAL
+                            </span>
+
+                            <h3>
+                                Les sons du moment
+                            </h3>
+
+                            <p>
+                                Découvre les tendances musicales
+                                qui font vibrer le monde.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="feature-panel panel-left"
+                        onclick="openContent('music-africa')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=1200&q=80"
+                            alt="Musique africaine"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                🌍 AFRIQUE
+                            </span>
+
+                            <h3>
+                                Made in Africa
+                            </h3>
+
+                            <p>
+                                Afrobeats, amapiano, rap, musique
+                                traditionnelle et nouveaux talents.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="feature-panel panel-right"
+                        onclick="openContent('music-cameroon')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80"
+                            alt="Concert"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                🇨🇲 CAMEROUN
+                            </span>
+
+                            <h3>
+                                Made in Cameroon
+                            </h3>
+
+                            <p>
+                                Découvre les artistes et les sons
+                                du Cameroun.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="feature-panel panel-left"
+                        onclick="openContent('music-mood')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1200&q=80"
+                            alt="Ambiance musicale"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                🌙 MOOD
+                            </span>
+
+                            <h3>
+                                La musique selon ton humeur
+                            </h3>
+
+                            <p>
+                                Chill, love, énergie, concentration
+                                ou good mood.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 DIVERTISSEMENT
+            ============================================== -->
+
+            <section class="universe-section entertainment-section">
+
+                <div class="universe-heading">
+
+                    <div>
+                        <span class="universe-icon">🎉</span>
+
+                        <div>
+                            <span class="section-kicker">
+                                UNIVERS
+                            </span>
+
+                            <h2>
+                                DIVERTISSEMENT
+                            </h2>
+                        </div>
+                    </div>
+
+
+                    <button
+                        class="universe-more"
+                        onclick="showPage('entertainment')"
+                    >
+                        VOIR TOUT →
+                    </button>
+
+                </div>
+
+
+                <div class="feature-list">
+
+                    <article
+                        class="feature-panel panel-left"
+                        onclick="openContent('fun-now')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=80"
+                            alt="Divertissement"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                ✨ MAINTENANT
+                            </span>
+
+                            <h3>
+                                Je veux me divertir
+                            </h3>
+
+                            <p>
+                                Choisis ton humeur, ton temps et
+                                ton envie. L U K I te propose quelque
+                                chose à faire.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="feature-panel panel-right"
+                        onclick="openContent('fun-social')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=80"
+                            alt="Amis"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                👥 SOCIAL
+                            </span>
+
+                            <h3>
+                                Amuse-toi avec tes amis
+                            </h3>
+
+                            <p>
+                                Crée des activités, invite tes amis
+                                et partage des moments ensemble.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="feature-panel panel-left"
+                        onclick="openContent('fun-quiz')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?auto=format&fit=crop&w=1200&q=80"
+                            alt="Quiz"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                🧠 QUIZ
+                            </span>
+
+                            <h3>
+                                Teste-toi
+                            </h3>
+
+                            <p>
+                                Quiz, énigmes, défis et questions
+                                pour mettre ton cerveau à l'épreuve.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 JEUX
+            ============================================== -->
+
+            <section class="universe-section games-section">
+
+                <div class="universe-heading">
+
+                    <div>
+                        <span class="universe-icon">🎮</span>
+
+                        <div>
+                            <span class="section-kicker">
+                                UNIVERS
+                            </span>
+
+                            <h2>
+                                JEUX
+                            </h2>
+                        </div>
+                    </div>
+
+
+                    <button
+                        class="universe-more"
+                        onclick="showPage('games')"
+                    >
+                        VOIR TOUT →
+                    </button>
+
+                </div>
+
+
+                <div class="feature-list">
+
+                    <article
+                        class="feature-panel panel-right"
+                        onclick="openContent('game-now')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80"
+                            alt="Jeux vidéo"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                ⚡ RAPIDE
+                            </span>
+
+                            <h3>
+                                Jouer maintenant
+                            </h3>
+
+                            <p>
+                                Lance une partie instantanément et
+                                profite de quelques minutes de jeu.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="feature-panel panel-left"
+                        onclick="openContent('game-brain')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1605870445919-838d190e8e1b?auto=format&fit=crop&w=1200&q=80"
+                            alt="Jeu de réflexion"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                🧠 CERVEAU
+                            </span>
+
+                            <h3>
+                                Teste ton cerveau
+                            </h3>
+
+                            <p>
+                                Logique, mémoire, calcul mental,
+                                énigmes et réflexion.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="feature-panel panel-right"
+                        onclick="openContent('game-friends')"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80"
+                            alt="Jeu entre amis"
+                        >
+
+                        <div class="panel-overlay"></div>
+
+                        <div class="panel-content">
+
+                            <span class="panel-label">
+                                👥 ENTRE AMIS
+                            </span>
+
+                            <h3>
+                                Joue avec tes amis
+                            </h3>
+
+                            <p>
+                                Défie tes proches dans des parties
+                                rapides et amusantes.
+                            </p>
+
+                            <span class="panel-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE DYNAMIQUE
+        ================================================== -->
+
+        <section
+            id="dynamicPage"
+            class="page hidden"
+        >
+
+            <div
+                id="dynamicPageContainer"
+                class="dynamic-page-container"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             AUTHENTIFICATION
+        ================================================== -->
+
+        <section
+            id="authPage"
+            class="page hidden"
+        >
+
+            <div class="auth-container">
+
+                <button
+                    class="back-button"
+                    onclick="showHome()"
+                >
+                    ← Retour
+                </button>
+
+
+                <div class="auth-brand">
+                    L U K I
+                </div>
+
+
+                <div class="auth-tabs">
+
+                    <button
+                        id="loginTab"
+                        class="auth-tab active"
+                        onclick="showLogin()"
+                    >
+                        SE CONNECTER
+                    </button>
+
+                    <button
+                        id="registerTab"
+                        class="auth-tab"
+                        onclick="showRegister()"
+                    >
+                        S'INSCRIRE
+                    </button>
+
+                </div>
+
+
+                <div id="loginForm" class="auth-form">
+
+                    <h1>
+                        Bon retour.
+                    </h1>
+
+                    <p>
+                        Connecte-toi à ton univers L U K I.
+                    </p>
+
+
+                    <div class="auth-methods">
+
+                        <button class="auth-method">
+                            <span>G</span>
+                            Continuer avec Google
+                        </button>
+
+                        <button class="auth-method">
+                            <span></span>
+                            Continuer avec Apple
+                        </button>
+
+                        <button class="auth-method">
+                            <span>f</span>
+                            Continuer avec Facebook
+                        </button>
+
+                        <button class="auth-method">
+                            <span>📱</span>
+                            Se connecter par SMS
+                        </button>
+
+                        <button class="auth-method">
+                            <span>⋯</span>
+                            J'ai un autre moyen de connexion
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        class="primary-button"
+                        onclick="fakeAuth('login')"
+                    >
+                        SE CONNECTER
+                    </button>
+
+
+                    <button
+                        class="text-button"
+                        onclick="showRegister()"
+                    >
+                        Pas encore de compte ? S'inscrire
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="registerForm"
+                    class="auth-form hidden"
+                >
+
+                    <h1>
+                        Bienvenue.
+                    </h1>
+
+                    <p>
+                        Crée ton compte L U K I.
+                    </p>
+
+
+                    <label>
+                        Nom d'utilisateur
+
+                        <input
+                            type="text"
+                            id="registerUsername"
+                            placeholder="@tonpseudo"
+                        >
+                    </label>
+
+
+                    <label>
+                        Adresse e-mail
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            placeholder="ton@email.com"
+                        >
+                    </label>
+
+
+                    <label>
+                        Mot de passe
+
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            placeholder="••••••••"
+                        >
+                    </label>
+
+
+                    <button
+                        class="primary-button"
+                        onclick="fakeAuth('register')"
+                    >
+                        CRÉER MON COMPTE
+                    </button>
+
+
+                    <button
+                        class="text-button"
+                        onclick="showLogin()"
+                    >
+                        J'ai déjà un compte
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PIED DE PAGE
+        ================================================== -->
+
+        <footer class="app-footer">
+
+            <div>
+                L U K I
+            </div>
+
+            <span>
+                © 2026 TCH / Prodige TCH
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT PRINCIPAL -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
