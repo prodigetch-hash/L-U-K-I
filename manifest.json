@@ -1,12 +1,1 @@
-{
-  "name": "L U K I — Prodige TCH",
-  "short_name": "L U K I",
-  "description": "Films, musique, divertissement et jeux.",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#242424",
-  "theme_color": "#242424",
-  "orientation": "portrait",
-  "lang": "fr",
-  "icons": []
-}
+
